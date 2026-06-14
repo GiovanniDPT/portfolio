@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Giovanni D Pro – Expert Shopify & Web Design</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#0a0a0f;
+  --bg2:#111118;
+  --bg3:#16161f;
+  --accent:#7c6fff;
+  --accent2:#a78bfa;
+  --text:#f0eeff;
+  --muted:#8b87a8;
+  --border:rgba(124,111,255,0.15);
+  --card:rgba(255,255,255,0.03);
+}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;line-height:1.6;overflow-x:hidden}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:1.2rem 2rem;display:flex;justify-content:space-between;align-items:center;background:rgba(10,10,15,0.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:1.1rem;color:var(--text);text-decoration:none;letter-spacing:-0.02em}
+.nav-logo span{color:var(--accent)}
+.nav-links{display:flex;gap:2rem;list-style:none}
+.nav-links a{color:var(--muted);text-decoration:none;font-size:0.88rem;font-weight:500;transition:color 0.2s;letter-spacing:0.02em}
+.nav-links a:hover{color:var(--text)}
+.nav-cta{background:var(--accent);color:#fff;padding:0.5rem 1.2rem;border-radius:8px;text-decoration:none;font-size:0.85rem;font-weight:600;transition:opacity 0.2s}
+.nav-cta:hover{opacity:0.85}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;align-items:center;padding:8rem 2rem 4rem;max-width:1100px;margin:0 auto;position:relative}
+.hero-badge{display:inline-flex;align-items:center;gap:0.5rem;background:rgba(124,111,255,0.1);border:1px solid rgba(124,111,255,0.3);border-radius:100px;padding:0.4rem 1rem;font-size:0.78rem;color:var(--accent2);margin-bottom:2rem;letter-spacing:0.05em;text-transform:uppercase;font-weight:500}
+.hero-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--accent);display:inline-block;animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.4}}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.8rem,6vw,5rem);font-weight:700;line-height:1.05;letter-spacing:-0.03em;margin-bottom:1.5rem}
+.hero h1 .line2{color:var(--accent)}
+.hero-desc{font-size:1.1rem;color:var(--muted);max-width:540px;margin-bottom:2.5rem;line-height:1.7}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap}
+.btn-primary{background:var(--accent);color:#fff;padding:0.85rem 2rem;border-radius:10px;text-decoration:none;font-weight:600;font-size:0.95rem;transition:transform 0.2s,opacity 0.2s;display:inline-block}
+.btn-primary:hover{opacity:0.88;transform:translateY(-1px)}
+.btn-secondary{border:1px solid var(--border);color:var(--text);padding:0.85rem 2rem;border-radius:10px;text-decoration:none;font-weight:500;font-size:0.95rem;transition:background 0.2s;display:inline-block}
+.btn-secondary:hover{background:rgba(255,255,255,0.04)}
+.hero-stats{display:flex;gap:3rem;margin-top:4rem;padding-top:3rem;border-top:1px solid var(--border)}
+.stat-num{font-family:'Space Grotesk',sans-serif;font-size:2.2rem;font-weight:700;color:var(--text);letter-spacing:-0.03em}
+.stat-num span{color:var(--accent)}
+.stat-label{font-size:0.82rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.2rem}
+
+/* SECTIONS */
+section{padding:6rem 2rem;max-width:1100px;margin:0 auto}
+.section-eyebrow{font-size:0.75rem;text-transform:uppercase;letter-spacing:0.15em;color:var(--accent);font-weight:600;margin-bottom:0.8rem}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.02em;margin-bottom:1.2rem}
+.section-sub{color:var(--muted);font-size:1rem;max-width:500px;line-height:1.7}
+
+/* SERVICES */
+.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:3.5rem}
+.service-card{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:2rem;transition:border-color 0.3s,transform 0.2s;position:relative;overflow:hidden}
+.service-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--accent),var(--accent2));opacity:0;transition:opacity 0.3s}
+.service-card:hover{border-color:rgba(124,111,255,0.4);transform:translateY(-3px)}
+.service-card:hover::before{opacity:1}
+.service-icon{font-size:1.8rem;margin-bottom:1.2rem;display:block}
+.service-name{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;font-weight:600;margin-bottom:0.7rem}
+.service-desc{color:var(--muted);font-size:0.88rem;line-height:1.65}
+.service-tag{display:inline-block;background:rgba(124,111,255,0.1);color:var(--accent2);border-radius:6px;padding:0.2rem 0.6rem;font-size:0.75rem;font-weight:500;margin-top:1rem}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(320px,1fr));gap:1.5rem;margin-top:3.5rem}
+.project-card{background:var(--card);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:transform 0.25s,border-color 0.25s}
+.project-card:hover{transform:translateY(-4px);border-color:rgba(124,111,255,0.4)}
+.project-img{width:100%;height:190px;object-fit:cover;background:var(--bg3);display:flex;align-items:center;justify-content:center;font-size:3rem}
+.project-img-placeholder{width:100%;height:190px;background:linear-gradient(135deg,var(--bg3),#1a1a28);display:flex;align-items:center;justify-content:center;font-size:2.5rem;color:var(--accent);border-bottom:1px solid var(--border)}
+.project-body{padding:1.5rem}
+.project-type{font-size:0.72rem;text-transform:uppercase;letter-spacing:0.1em;color:var(--accent);font-weight:600;margin-bottom:0.5rem}
+.project-name{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:600;margin-bottom:0.6rem}
+.project-desc{color:var(--muted);font-size:0.86rem;line-height:1.6;margin-bottom:1.2rem}
+.project-tags{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1.2rem}
+.tag{background:rgba(124,111,255,0.08);border:1px solid rgba(124,111,255,0.2);color:var(--accent2);border-radius:6px;padding:0.2rem 0.65rem;font-size:0.74rem;font-weight:500}
+.project-link{color:var(--accent);text-decoration:none;font-size:0.85rem;font-weight:600;display:inline-flex;align-items:center;gap:0.4rem;transition:gap 0.2s}
+.project-link:hover{gap:0.7rem}
+
+/* TESTIMONIALS */
+.testimonials-bg{background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+.testimonials-inner{max-width:1100px;margin:0 auto;padding:6rem 2rem}
+.testimonials-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.2rem;margin-top:3.5rem}
+.testi-card{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:1.75rem}
+.testi-stars{color:#f59e0b;font-size:0.85rem;margin-bottom:1rem;letter-spacing:0.1em}
+.testi-text{color:var(--text);font-size:0.9rem;line-height:1.65;margin-bottom:1.2rem;font-style:italic}
+.testi-author{display:flex;align-items:center;gap:0.8rem;border-top:1px solid var(--border);padding-top:1rem;margin-top:0.5rem}
+.testi-avatar{width:36px;height:36px;border-radius:50%;background:var(--accent);display:flex;align-items:center;justify-content:center;font-size:0.85rem;font-weight:700;color:#fff;flex-shrink:0}
+.testi-name{font-weight:600;font-size:0.88rem}
+.testi-company{color:var(--muted);font-size:0.78rem}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:center;margin-top:3.5rem}
+@media(max-width:768px){.about-grid{grid-template-columns:1fr}}
+.about-text p{color:var(--muted);font-size:0.95rem;line-height:1.8;margin-bottom:1.2rem}
+.about-skills{display:flex;flex-wrap:wrap;gap:0.6rem;margin-top:1.5rem}
+.skill-pill{background:rgba(124,111,255,0.1);border:1px solid rgba(124,111,255,0.25);color:var(--accent2);border-radius:8px;padding:0.4rem 0.9rem;font-size:0.82rem;font-weight:500}
+.about-card{background:var(--bg2);border:1px solid var(--border);border-radius:20px;padding:2.5rem}
+.about-card-title{font-family:'Space Grotesk',sans-serif;font-size:1rem;font-weight:600;margin-bottom:1.5rem;color:var(--muted);text-transform:uppercase;letter-spacing:0.1em;font-size:0.75rem}
+.about-item{display:flex;align-items:flex-start;gap:0.8rem;margin-bottom:1.5rem}
+.about-dot{width:8px;height:8px;border-radius:50%;background:var(--accent);margin-top:0.45rem;flex-shrink:0}
+.about-item-title{font-weight:600;font-size:0.92rem;margin-bottom:0.2rem}
+.about-item-sub{color:var(--muted);font-size:0.82rem}
+
+/* CONTACT */
+.contact-bg{background:var(--bg2);border-top:1px solid var(--border)}
+.contact-inner{max-width:700px;margin:0 auto;padding:6rem 2rem;text-align:center}
+.contact-inner .section-sub{margin:0 auto 2.5rem}
+.contact-cards{display:flex;justify-content:center;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.contact-card{background:var(--bg3);border:1px solid var(--border);border-radius:12px;padding:1.2rem 1.8rem;display:flex;align-items:center;gap:0.8rem;text-decoration:none;color:var(--text);transition:border-color 0.2s,transform 0.2s;font-size:0.9rem;font-weight:500}
+.contact-card:hover{border-color:rgba(124,111,255,0.5);transform:translateY(-2px)}
+.contact-card-icon{font-size:1.2rem}
+
+/* FOOTER */
+footer{padding:2rem;text-align:center;color:var(--muted);font-size:0.8rem;border-top:1px solid var(--border)}
+
+/* DIVIDER */
+.full-divider{border:none;border-top:1px solid var(--border);max-width:1100px;margin:0 auto}
+
+/* SCROLL REVEAL */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.6s ease,transform 0.6s ease}
+.reveal.visible{opacity:1;transform:none}
+
+@media(max-width:600px){
+  .hero-stats{flex-direction:column;gap:1.5rem}
+  .nav-links{display:none}
+  .hero{padding-top:6rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#" class="nav-logo">Giovanni<span>.</span></a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#projets">Projets</a></li>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#about">À propos</a></li>
+  </ul>
+  <a href="#contact" class="nav-cta">Me contacter</a>
+</nav>
+
+<!-- HERO -->
+<div style="max-width:1100px;margin:0 auto">
+<section class="hero" id="hero">
+  <div>
+    <div class="hero-badge">Disponible pour nouvelles missions</div>
+    <h1>Expert Shopify<br><span class="line2">& Web Design</span></h1>
+    <p class="hero-desc">Je transforme les boutiques Shopify existantes en sites professionnels, rapides et optimisés pour vendre. Design · SEO · Automatisation IA.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Discuter de mon projet</a>
+      <a href="#projets" class="btn-secondary">Voir mes projets</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">12<span>+</span></div>
+        <div class="stat-label">Projets livrés</div>
+      </div>
+      <div>
+        <div class="stat-num">10<span>★</span></div>
+        <div class="stat-label">Avis 5 étoiles</div>
+      </div>
+      <div>
+        <div class="stat-num">2<span>ans</span></div>
+        <div class="stat-label">D'expérience</div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+
+<hr class="full-divider">
+
+<!-- SERVICES -->
+<section id="services" class="reveal">
+  <div class="section-eyebrow">Ce que je fais</div>
+  <h2 class="section-title">Mes services</h2>
+  <p class="section-sub">Chaque mission est pensée pour maximiser la performance de votre boutique, pas juste son apparence.</p>
+  <div class="services-grid">
+    <div class="service-card">
+      <span class="service-icon">🛍️</span>
+      <div class="service-name">Refonte Shopify</div>
+      <div class="service-desc">Transformation complète de votre boutique existante : design, UX, tunnel de vente, structure des pages produits et intégration d'apps.</div>
+      <span class="service-tag">Spécialité principale</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🎨</span>
+      <div class="service-name">UX / UI Design</div>
+      <div class="service-desc">Interfaces pensées pour convertir. Chaque élément visuel est optimisé pour guider l'utilisateur vers l'achat.</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🔍</span>
+      <div class="service-name">SEO On-page</div>
+      <div class="service-desc">Optimisation technique et éditoriale de vos pages produits et collections pour générer du trafic organique qualifié durablement.</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🤖</span>
+      <div class="service-name">Automatisation IA</div>
+      <div class="service-desc">Génération de fiches produits, contenu SEO et workflows automatisés via Make, ChatGPT, Gemini, Midjourney et d'autres outils IA.</div>
+      <span class="service-tag">Compétence rare</span>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🐛</span>
+      <div class="service-name">Correction & Optimisation</div>
+      <div class="service-desc">Audit et correction de bugs, personnalisation de thèmes, amélioration des performances et de la vitesse de chargement.</div>
+    </div>
+    <div class="service-card">
+      <span class="service-icon">🌐</span>
+      <div class="service-name">Web Design</div>
+      <div class="service-desc">Création et refonte de sites vitrines professionnels pour restaurants, artisans, indépendants et petites entreprises.</div>
+    </div>
+  </div>
+</section>
+
+<hr class="full-divider">
+
+<!-- PROJETS -->
+<section id="projets" class="reveal">
+  <div class="section-eyebrow">Réalisations</div>
+  <h2 class="section-title">Projets récents</h2>
+  <p class="section-sub">Des boutiques réelles, pour des clients réels — avec des résultats validés.</p>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <div class="project-img-placeholder">🛍️</div>
+      <div class="project-body">
+        <div class="project-type">Refonte Shopify · Mode</div>
+        <div class="project-name">Allaura</div>
+        <div class="project-desc">Refonte complète du design d'une boutique e-commerce dans le secteur de la mode. Restructuration visuelle, UX et navigation optimisée pour la conversion.</div>
+        <div class="project-tags">
+          <span class="tag">Shopify</span>
+          <span class="tag">UI/UX Design</span>
+          <span class="tag">Mode</span>
+        </div>
+        <a href="https://www.allaura.fr/" target="_blank" class="project-link">Voir le site →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-placeholder">👗</div>
+      <div class="project-body">
+        <div class="project-type">Personnalisation Shopify · Boutique</div>
+        <div class="project-name">Lauve Boutique</div>
+        <div class="project-desc">Personnalisation du thème Dawn, correction de bugs UI, ajout de paramètres de schéma personnalisés et optimisation de l'expérience utilisateur.</div>
+        <div class="project-tags">
+          <span class="tag">Shopify</span>
+          <span class="tag">Thème Dawn</span>
+          <span class="tag">UX</span>
+        </div>
+        <a href="https://lauveaboutique.com/" target="_blank" class="project-link">Voir le site →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-placeholder">🔑</div>
+      <div class="project-body">
+        <div class="project-type">Optimisation · Licences digitales</div>
+        <div class="project-name">DA Licences</div>
+        <div class="project-desc">Audit et optimisation complète d'une boutique Shopify : correction de bugs, mise à niveau design et conseils stratégiques. Mission livrée en temps record avec 5 étoiles.</div>
+        <div class="project-tags">
+          <span class="tag">Shopify</span>
+          <span class="tag">CRO</span>
+          <span class="tag">Audit</span>
+        </div>
+        <a href="https://dalicences.fr/" target="_blank" class="project-link">Voir le site →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-placeholder">💡</div>
+      <div class="project-body">
+        <div class="project-type">E-commerce · Décoration</div>
+        <div class="project-name">Lampe Chevet Design</div>
+        <div class="project-desc">Ma propre boutique Shopify active dans le secteur des luminaires et de la décoration. Design, SEO, Facebook Ads et Google Ads — gérée en autonomie complète.</div>
+        <div class="project-tags">
+          <span class="tag">Shopify</span>
+          <span class="tag">SEO</span>
+          <span class="tag">Facebook Ads</span>
+          <span class="tag">Google Ads</span>
+        </div>
+        <a href="https://lampechevetdesign.com" target="_blank" class="project-link">Voir le site →</a>
+      </div>
+    </div>
+
+    <div class="project-card">
+      <div class="project-img-placeholder">🤖</div>
+      <div class="project-body">
+        <div class="project-type">Outil IA · Automatisation</div>
+        <div class="project-name">Générateur de fiches produits IA</div>
+        <div class="project-desc">Outil basé sur des prompts IA avancés permettant de générer des fiches produits complètes et optimisées en moins de 2 minutes. Utilisé par plusieurs e-commerçants et agences.</div>
+        <div class="project-tags">
+          <span class="tag">Automatisation IA</span>
+          <span class="tag">Prompts</span>
+          <span class="tag">E-commerce</span>
+        </div>
+        <a href="https://www.malt.fr/profile/giovannidpt" target="_blank" class="project-link">Voir sur Malt →</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<div class="testimonials-bg">
+<div class="testimonials-inner reveal" id="avis">
+  <div class="section-eyebrow">Ce que disent mes clients</div>
+  <h2 class="section-title">10 avis · 5 étoiles</h2>
+  <div class="testimonials-grid">
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Giovanni a parfaitement répondu à mes attentes, et plus encore, m'a donné d'excellents conseils pour une mise à niveau de mon site. Il a également corrigé pas mal de problèmes. Tout ça en temps record !"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">J</div>
+        <div>
+          <div class="testi-name">Jullen</div>
+          <div class="testi-company">DA Licences</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Giovanni a été très à l'écoute et réactif dès le début de nos échanges. Je suis très satisfaite de sa prestation !"</p>
+      <div class="testi-author">
+        <div class="testi-avatar">J</div>
+        <div>
+          <div class="testi-name">Jessica</div>
+          <div class="testi-company">Allaura</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Giovanni est un jeune tout simplement exceptionnel ! Rapidité, qualité de travail et sens du détail impressionnant. Il est très à l'écoute, ce qui rend la collaboration fluide et agréable."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">C</div>
+        <div>
+          <div class="testi-name">Chat</div>
+          <div class="testi-company">Client Malt</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Travailler avec Giovanni a été une excellente expérience ! Il est très professionnel, réactif et à l'écoute. Son travail est de grande qualité et livré dans les délais."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">M</div>
+        <div>
+          <div class="testi-name">Mamadou</div>
+          <div class="testi-company">Myftsnackbox</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Giovanni fait preuve d'un grand professionnalisme et sait mener chaque mission vers le succès. Les échanges avec lui sont fluides, il est très réactif et maîtrise parfaitement son domaine."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">C</div>
+        <div>
+          <div class="testi-name">Cem</div>
+          <div class="testi-company">Media AdGency</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"Giovanni a été très professionnel et très réactif. Il m'a donné en détails les différentes étapes et m'a accompagné lors du projet. Je recommande ses services les yeux fermés."</p>
+      <div class="testi-author">
+        <div class="testi-avatar">B</div>
+        <div>
+          <div class="testi-name">Bastien</div>
+          <div class="testi-company">Bastien Bas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+
+<!-- ABOUT -->
+<section id="about" class="reveal">
+  <div class="section-eyebrow">À propos</div>
+  <h2 class="section-title">Giovanni D Pro</h2>
+  <div class="about-grid">
+    <div class="about-text">
+      <p>Je suis freelance spécialisé dans l'optimisation de boutiques Shopify. Mon approche : comprendre votre business, identifier ce qui freine vos ventes, et livrer un résultat concret — pas juste un beau site.</p>
+      <p>Ce qui me différencie : je combine le design, le SEO et l'automatisation IA dans chaque projet. Résultat — vous gagnez du temps, de la visibilité et des ventes.</p>
+      <p>Je gère également ma propre boutique Shopify active dans la décoration, ce qui me donne une vision terrain que peu de freelances ont.</p>
+      <div class="about-skills">
+        <span class="skill-pill">Shopify</span>
+        <span class="skill-pill">UI/UX Design</span>
+        <span class="skill-pill">SEO</span>
+        <span class="skill-pill">Make</span>
+        <span class="skill-pill">ChatGPT</span>
+        <span class="skill-pill">Gemini</span>
+        <span class="skill-pill">Midjourney</span>
+        <span class="skill-pill">Facebook Ads</span>
+        <span class="skill-pill">HTML/CSS</span>
+        <span class="skill-pill">Liquid</span>
+      </div>
+    </div>
+    <div class="about-card">
+      <div class="about-card-title">Parcours</div>
+      <div class="about-item">
+        <div class="about-dot"></div>
+        <div>
+          <div class="about-item-title">Freelance – Giovanni D Pro</div>
+          <div class="about-item-sub">2023 – Aujourd'hui · Web Design, Shopify, SEO, IA</div>
+        </div>
+      </div>
+      <div class="about-item">
+        <div class="about-dot"></div>
+        <div>
+          <div class="about-item-title">E-commerçant – Lampe Chevet Design</div>
+          <div class="about-item-sub">2023 – Aujourd'hui · Gestion boutique Shopify active</div>
+        </div>
+      </div>
+      <div class="about-item">
+        <div class="about-dot"></div>
+        <div>
+          <div class="about-item-title">BTS SIO option SLAM</div>
+          <div class="about-item-sub">2021 – 2023 · Développement d'applications, gestion de projet</div>
+        </div>
+      </div>
+      <div class="about-item">
+        <div class="about-dot"></div>
+        <div>
+          <div class="about-item-title">Formation E-commerce & Shopify Avancé</div>
+          <div class="about-item-sub">2023 · SEO, Facebook Ads, Google Ads, Email Marketing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-bg">
+<div class="contact-inner reveal" id="contact">
+  <div class="section-eyebrow">Contact</div>
+  <h2 class="section-title">Parlons de votre projet</h2>
+  <p class="section-sub">Décrivez-moi votre boutique et ce que vous souhaitez améliorer — je reviens vers vous sous 24h avec une proposition claire.</p>
+  <div class="contact-cards">
+    <a href="mailto:giovannidpro@gmail.com" class="contact-card">
+      <span class="contact-card-icon">✉️</span>
+      giovannidpro@gmail.com
+    </a>
+    <a href="https://www.malt.fr/profile/giovannidpt" target="_blank" class="contact-card">
+      <span class="contact-card-icon">💼</span>
+      Profil Malt
+    </a>
+    <a href="https://www.instagram.com/giovannidpro" target="_blank" class="contact-card">
+      <span class="contact-card-icon">📸</span>
+      @giovannidpro
+    </a>
+  </div>
+  <a href="mailto:giovannidpro@gmail.com" class="btn-primary" style="font-size:1rem;padding:1rem 2.5rem">Envoyer un message</a>
+</div>
+</div>
+
+<footer>
+  <p>© 2025 Giovanni D Pro · Expert Shopify & Web Design · Lille, France</p>
+</footer>
+
+<script>
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible') });
+}, {threshold: 0.1});
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
